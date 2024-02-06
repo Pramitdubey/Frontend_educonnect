@@ -1,11 +1,17 @@
 import React from "react";
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Feature from "./Components/Feature.jsx";
-import Login from "./Components/Login.jsx";
-import Pricing from "./Components/Pricing.jsx";
-import About from "./Components/About.jsx";
-import Home from "./Components/Home.jsx";
+import Login from "./Pages/Login.jsx";
+import Pricing from "./Pages/Pricing.jsx";
+import About from "./Pages/About.jsx";
+import Home from "./Pages/Home.jsx";
+import SignUp from "./Pages/Signup.jsx";
+import Course from "./Pages/Courses.jsx";
+import Profile from "./Pages/Profile.jsx";
+import Coursecontent from "./Pages/Coursecontent.jsx"
+import Profilementors from "./Pages/Profilementors.jsx";
+import Profileedit from "./Pages/Profileedit.jsx";
+
 
 
 
@@ -16,11 +22,19 @@ function App() {
     
     
     <Routes>
-        <Route path="/" element={<Home/>} index/>
-        <Route path="/feature" element={<Feature/>}/>
+        <Route path="/" exact element={<Home/>} />
+        
+
+        <Route path="/courses" element={<Course/>}/>
+        <Route path="/courses/coursecontent" element={<Coursecontent/>}/>
+        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/profile/mentors" element={<Profilementors/>}/>
+        <Route path="/profile/edit" element={<Profileedit/>}/>
         <Route path="/pricing" element={<Pricing/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<SignUp/>}/>
+
     </Routes>
 
     </BrowserRouter>
